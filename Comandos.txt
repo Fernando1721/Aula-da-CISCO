@@ -1,0 +1,44 @@
+-Configuração de Switch
+....
+....
+....
+....
+enable
+     configure terminal 
+	    hostname sw-02
+		service password-encryption
+		no ip domain-lookup
+		banner motd #AVISO: acesso autorizado somente para funcionarios#
+		enable secret 123@senac
+		username senac secret 123@senac
+		username tatuape password 123@senac
+		line console 0 
+		   login local
+		   logging synchronous 
+		   password 123@senac
+		   exec-timeout 5 30
+		   exit
+		exit
+	copy running-config startup-config
+disable
+exit
+..
+..
+..
+..
+*Configuração de Roteador
+
+enable 
+   configure terminal
+     interface GigabitEthernet 0/0
+	 description Interface de Gateway da LAN
+	 ip address 192.168.0.254 255.255.255.0
+	 no shutdown
+	 end
+exit 	 
+	 
+	 
+      
+   
+
+
