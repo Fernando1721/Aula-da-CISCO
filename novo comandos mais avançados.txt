@@ -40,3 +40,13 @@ enable
 	   end
 	write
 	show running-config
+
+        1° pingar o pc em todos os switch com o ip de cada um, switch para ver se tem comunicação	
+	2° comando telnet (comando não seguro) para acessar remoto...
+	
+	
+	
+	
+	
+	
+	
