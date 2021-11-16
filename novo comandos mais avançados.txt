@@ -40,9 +40,25 @@ enable
 	   end
 	write
 	show running-config
+	
+	
+	acessar remotamente de forma segura COMANDO: ssh -l (O NOME DE USUARIO DA REDE) e (ENDEREÇO DE IP DO SWITCH QUE VC QUER ENTRAR)
 
         1° pingar o pc em todos os switch com o ip de cada um, switch para ver se tem comunicação	
 	2° comando telnet (comando não seguro) para acessar remoto...
+	
+	
+	(COMANDO PARA FAZER BACKUP DE SWITCH E ROTEADOR, MESMO PROCESSO)   
+	
+enable  
+    show flash
+    copy running-config startup-config
+    copy running-config flash
+    show flash
+    copy running-config tftp (e endereco na frente)
+	
+  Apos configurar tudo: digitar o comando (exit)
+  E para ver se está salvo é o comando (dir)
 	
 	
 	
