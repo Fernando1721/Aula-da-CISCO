@@ -59,6 +59,76 @@ enable
 	
   Apos configurar tudo: digitar o comando (exit)
   E para ver se está salvo é o comando (dir)
+  
+  
+ -----------------------------------------------------------------------------------------------------------
+ 
+ 
+  REDES 22/11/2021
+
+    *Classes de IPv4: morreu na década de 90*  
+
+    *Divididas em 5 classes sendo elas: A, B, C, D, E*
+	
+	
+ - A: 0.0.0.0 -> 127.255.255.255    
+ - B: 128.0.0.0 -> 191.255.255.255
+ - C: 192.0.0.0 -> 223.255.255.255
+ - D: 224.0.0.0 -> 239.255.255.255
+ - E: 240.0.0.0 -> 247.255.255.255
+
+JAMAIS UTILIZAR OS ENDEREÇO QUE COMEÇA COM: 127, 169, 224
+
+ *CLASSES PRIVADAS*
+ 
+ - A: 10.0.0.0 -> 10.255.255.255
+   Máscara padrão: 255.0.0.0
+   
+ - B: 172.16.0.0.0 -> 172.31.255.255.255                         DO 0 em diante é o HOST, antes disso é REDES: EX 192.168.0./0
+   Máscara padrão: 255.255.0.0                                                                                    255.255.255./0
+   
+ - C: 192.168.0.0 -> 192.168.255.255
+   Máscara padrão: 255.255.255.0
+   
+   
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  *Configuração de roteador* 
+  
+enable  
+    configure terminal
+	    interface GigabitEthernet 0/1
+		description Interface de WAN
+		ip address 10.0.0.2 255.255.255.252
+		no shutdown
+		end
+		show ip interface brief
+		show ip route static
+	write	
+	 
+
+
+  *Configuração de roteador* 
+  
+  
+enable  
+    configure terminal
+	   ip route 192.168.0.0 255.255.255.0 10.0.0.1   
+	write	
+	
+	show ip interface brief
+		show ip route static
+ 
+ 
+ 
+ *RESETAR COMANDOS*
+ 
+ enable
+    erase startup-config
+    reload
+	
+COMANDO PARA VERIFICAR A ROTA 
+
+tracert 192.168.1.10	
 	
 	
 	
